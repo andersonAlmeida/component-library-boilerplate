@@ -18,6 +18,7 @@
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
+    "build:docs": "vue-docgen",
     "lint": "vue-cli-service lint"
   },
   "devDependencies": {
@@ -48,6 +49,7 @@
     "sass": "^1.32.10",
     "sass-loader": "^10.1.1",
     "vue": "^2.6.12",
+    "vue-docgen-cli": "^4.38.1",
     "vue-template-compiler": "^2.6.12"
   },
   "peerDependencies": {

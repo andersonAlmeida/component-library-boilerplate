@@ -1,5 +1,5 @@
 <template>
-  <button @click="$emit('click', $event)">
+  <button class="custom-button" @click="$emit('click', $event)">
     <!--
       @slot Texto do botão
       @mock Click me
@@ -39,12 +39,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-button {
+.custom-button {
+  width: 200px;
+  height: 45px;
   padding: 10px;
   border-radius: 10px;
   background: #000;
   color: #fff;
   border: none;
+  cursor: pointer;
 }
 </style>
 

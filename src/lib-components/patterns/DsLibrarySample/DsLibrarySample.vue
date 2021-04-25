@@ -1,3 +1,17 @@
+<template>
+  <div class="ds-library-sample">
+    <p>
+      The counter was {{ changedBy }} to <b>{{ counter }}</b
+      >.
+    </p>
+    <button @click="increment">Click +1</button>
+    <button @click="decrement">Click -1</button>
+    <button @click="increment(5)">Click +5</button>
+    <button @click="decrement(5)">Click -5</button>
+    <button @click="reset">Reset</button>
+  </div>
+</template>
+
 <script>
 export default /*#__PURE__*/ {
   name: "DsLibrarySample", // vue component name
@@ -40,20 +54,6 @@ export default /*#__PURE__*/ {
 };
 </script>
 
-<template>
-  <div class="ds-library-sample">
-    <p>
-      The counter was {{ changedBy }} to <b>{{ counter }}</b
-      >.
-    </p>
-    <button @click="increment">Click +1</button>
-    <button @click="decrement">Click -1</button>
-    <button @click="increment(5)">Click +5</button>
-    <button @click="decrement(5)">Click -5</button>
-    <button @click="reset">Reset</button>
-  </div>
-</template>
-
 <style scoped>
 .ds-library-sample {
   display: block;
@@ -68,3 +68,9 @@ export default /*#__PURE__*/ {
   margin: 0 0 1em;
 }
 </style>
+
+<docs>
+  ```vue live
+  <DsLibrarySample />
+  ```
+</docs>
