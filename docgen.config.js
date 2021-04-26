@@ -5,7 +5,7 @@ module.exports = {
   components: '**/[A-Z]*.vue', // the glob to define what files should be documented as components (relative to componentRoot)
   outDir: 'docs/src/components', // folder to save components docs in (relative to the current working directry)
   getDestFile: (file, config) => {
-    // remove o nome da pasta em que está o componente
+    /** Removes the folder name where the component is. */
     return path.join(
       config.outDir,
       file.replace(/\/[a-zA-Z]{1,}\//gim, '/').replace(/\.vue$/, '.md')

@@ -146,7 +146,10 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
-    ['live'],
+    [
+      'live'
+      // { layout: path.resolve(__dirname, './components/VueLiveLayout.vue') }
+    ],
     [
       '@vuepress/register-components',
       {
