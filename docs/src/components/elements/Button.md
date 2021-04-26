@@ -6,7 +6,7 @@
 
 | Prop name | Description    | Type   | Values                                     | Default   |
 | --------- | -------------- | ------ | ------------------------------------------ | --------- |
-| color     | Cores do botão | string | `primary`, `secondary`, `error`, `success` | "primary" |
+| color     | Cores do botão | string | `primary`, `secondary`, `error`, `success` | 'primary' |
 
 ## Events
 

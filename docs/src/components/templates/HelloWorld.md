@@ -9,3 +9,7 @@
 | msg       | Mensagem principal | string | -      |         |
 
 ---
+
+```vue live
+<HelloWorld />
+```

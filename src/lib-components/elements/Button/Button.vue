@@ -14,7 +14,7 @@
  */
 
 export default {
-  name: "Button",
+  name: 'Button',
   props: {
     /**
      * Cores do botão
@@ -22,7 +22,7 @@ export default {
      */
     color: {
       type: String,
-      default: "primary"
+      default: 'primary'
     }
   },
   methods: {
