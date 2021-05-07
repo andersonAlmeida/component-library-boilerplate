@@ -1,3 +1,3 @@
-import MyPattern from "./MyPattern.vue";
+import MyPattern from './MyPattern.vue';
 
 export default MyPattern;

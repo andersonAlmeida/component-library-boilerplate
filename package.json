@@ -9,7 +9,8 @@
   "files": [
     "dist/*",
     "src/**/*.vue",
-    "types/*.d.ts"
+    "types/*.d.ts",
+    "src/assets/scss/*"
   ],
   "sideEffects": false,
   "scripts": {
@@ -50,7 +51,8 @@
     "sass-loader": "^10.1.1",
     "vue": "^2.6.12",
     "vue-docgen-cli": "^4.38.1",
-    "vue-template-compiler": "^2.6.12"
+    "vue-template-compiler": "^2.6.12",
+    "rollup-plugin-postcss": "^4.0.0"
   },
   "peerDependencies": {
     "vue": "^2.6.12"
