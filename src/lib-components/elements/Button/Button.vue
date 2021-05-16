@@ -39,14 +39,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import '@/assets/scss/tokens/tokens.scss';
-
 .custom-button {
   width: 200px;
   height: 45px;
   padding: 10px;
   border-radius: 10px;
-  background: $primary;
+  background: color('primary');
   color: #fff;
   border: none;
   cursor: pointer;

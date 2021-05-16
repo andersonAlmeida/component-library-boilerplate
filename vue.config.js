@@ -6,7 +6,8 @@ module.exports = {
     loaderOptions: {
       sass: {
         additionalData: `
-          @import "@/assets/scss/tokens/tokens.scss";
+          @import "@/assets/scss/tokens";
+          @import "@/assets/scss/functions";
         `
       }
     }

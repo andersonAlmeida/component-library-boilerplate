@@ -53,7 +53,10 @@ const baseConfig = {
       style: {
         preprocessOptions: {
           scss: {
-            data: `@import './src/assets/scss/tokens/tokens.scss';`
+            data: `
+              @import './src/assets/scss/tokens';
+              @import './src/assets/scss/functions';
+            `
           }
         }
       }
