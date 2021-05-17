@@ -1,3 +1,6 @@
+/*
+  Applies the color variant as a css variable to allow override the default theme
+*/
 @function color($variant) {
-  @return var(--#{$variant});
+  @return var(--#{$prefix + $variant});
 }
