@@ -120,7 +120,8 @@ if (!argv.format || argv.format === 'es') {
             }
           ]
         ]
-      })
+      }),
+      terser()
     ]
   };
   buildFormats.push(esConfig);
@@ -149,7 +150,8 @@ if (!argv.format || argv.format === 'cjs') {
         }
       }),
       ...baseConfig.plugins.postVue,
-      babel(baseConfig.plugins.babel)
+      babel(baseConfig.plugins.babel),
+      terser()
     ]
   };
   buildFormats.push(umdConfig);
