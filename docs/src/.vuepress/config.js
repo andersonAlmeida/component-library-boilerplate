@@ -161,9 +161,10 @@ module.exports = {
    */
   scss: {
     additionalData: `
+        @import "../../../../src/assets/scss/_config.scss";
         @import "../../../../src/assets/scss/_tokens.scss";
         @import "../../../../src/assets/scss/_functions.scss";
-        @import "../../../../src/assets/scss/ds-library.scss";
+        @import "../../../../src/assets/scss/_root.scss";
       `
   }
 };
