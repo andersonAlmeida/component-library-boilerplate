@@ -1,12 +1,10 @@
 <script>
-import Vue from "vue";
-import HelloWorld from "../src/lib-components/templates/HelloWorld/HelloWorld.vue";
+import Vue from 'vue';
 // Uncomment import and local "components" registration if library is not registered globally.
 // import { DsLibrarySample } from '@/entry.esm';
 
 export default Vue.extend({
-  components: { HelloWorld },
-  name: "ServeDev"
+  name: 'ServeDev'
   // components: {
   //  DsLibrarySample,
   // }
@@ -15,8 +13,8 @@ export default Vue.extend({
 
 <template>
   <div id="app">
-    <ds-library-sample />
-    <Button />
+    <DsLibrarySample />
+    <Button>Teste</Button>
     <MyPattern />
     <HelloWorld />
   </div>

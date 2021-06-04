@@ -107,7 +107,7 @@
  * Hello World componente de teste
  */
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
   props: {
     /**
      * Mensagem principal
@@ -134,3 +134,9 @@ a {
   color: #42b983;
 }
 </style>
+
+<docs>
+  ```vue live
+  <HelloWorld />
+  ```
+</docs>

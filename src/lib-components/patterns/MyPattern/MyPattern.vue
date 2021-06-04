@@ -8,6 +8,12 @@
  */
 
 export default {
-  name: "MytPattern"
+  name: 'MyPattern'
 };
 </script>
+
+<docs>
+  ```vue live
+  <MyPattern />
+  ```
+</docs>
