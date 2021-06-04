@@ -1,9 +1,9 @@
 const { description } = require('../../package');
 const path = require('path');
 const glob = require('glob');
-const fs = require('fs');
 
 const COMPONENTS_PATH = path.join(__dirname, '../../../src/lib-components');
+const ASSETS_PATH = path.join(__dirname, '../../../src/assets');
 
 /** Load all elements components to generate the pages */
 const elements = glob
@@ -60,8 +60,6 @@ const liveComponents = glob
 
     return acc;
   }, []);
-
-// console.log(JSON.stringify(liveComponents, true, 4));
 
 module.exports = {
   /**
@@ -156,5 +154,16 @@ module.exports = {
         components: liveComponents
       }
     ]
-  ]
+  ],
+
+  /**
+   * Global sass variables
+   */
+  scss: {
+    additionalData: `
+        @import "../../../../src/assets/scss/_tokens.scss";
+        @import "../../../../src/assets/scss/_functions.scss";
+        @import "../../../../src/assets/scss/ds-library.scss";
+      `
+  }
 };
