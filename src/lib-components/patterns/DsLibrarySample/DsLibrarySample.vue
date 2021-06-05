@@ -38,6 +38,8 @@ export default /*#__PURE__*/ {
       this.counter += amount;
       this.message.action = 'incremented by';
       this.message.amount = amount;
+
+      this.$emit('test-event', true);
     },
     decrement(arg) {
       const amount = typeof arg !== 'number' ? 1 : arg;

@@ -1,20 +1,23 @@
-<template>
-  <div class="my-vuelive">
-    <button class="showEditor" type="button" @click="showEditor = !showEditor">
-      Show editor
-    </button>
+<template functional>
+  <div class="preview-code">
+    <h2 id="preview">Preview</h2>
 
-    <div v-show="showEditor" class="my-vuelive-editor">
-      <slot name="editor"></slot>
-    </div>
+    <div class="preview-code-container">
+      <div :class="`language-${props.lang} editor block`">
+        <slot name="editor"></slot>
+      </div>
 
-    <div class="my-vuelive-preview">
-      <slot name="preview"></slot>
+      <div class="preview block">
+        <slot name="preview"></slot>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import 'prismjs/themes/prism-tomorrow.css';
+import 'vue-prism-editor/dist/prismeditor.min.css';
+
 export default {
   data() {
     return {
@@ -25,23 +28,36 @@ export default {
 </script>
 
 <style lang="scss">
-.my-vuelive {
-  textarea {
-    width: 100%;
-    min-height: 100px;
-    padding: 10px;
-    margin: 0;
+.preview-code {
+  .preview {
+    margin: 16px 0;
+    padding: 15px;
     box-sizing: border-box;
-    background-color: #f7f7f7;
   }
 
-  .my-vuelive-editor {
-    margin: 16px 0 0;
+  .prism-editor__container {
     color: #fff;
+    border-radius: 6px;
   }
 
-  .my-vuelive-preview {
-    margin: 0;
+  .prism-editor-wrapper .prism-editor__textarea,
+  .prism-editor-wrapper .prism-editor__editor {
+    padding: 10px;
+  }
+
+  @media screen and (min-width: 1300px) {
+    .preview {
+      margin: 0;
+    }
+
+    .preview,
+    .editor {
+      width: 50%;
+    }
+
+    &-container {
+      display: flex;
+    }
   }
 }
 </style>

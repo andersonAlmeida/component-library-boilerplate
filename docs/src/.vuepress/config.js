@@ -1,9 +1,9 @@
 const { description } = require('../../package');
 const path = require('path');
 const glob = require('glob');
-const fs = require('fs');
 
 const COMPONENTS_PATH = path.join(__dirname, '../../../src/lib-components');
+const SCSS_PATH = '../../../../src/assets/scss';
 
 /** Load all elements components to generate the pages */
 const elements = glob
@@ -60,8 +60,6 @@ const liveComponents = glob
 
     return acc;
   }, []);
-
-// console.log(JSON.stringify(liveComponents, true, 4));
 
 module.exports = {
   /**
@@ -147,8 +145,8 @@ module.exports = {
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
     [
-      'live'
-      // { layout: path.resolve(__dirname, './components/VueLiveLayout.vue') }
+      'live',
+      { layout: path.resolve(__dirname, './components/VueLiveLayout.vue') }
     ],
     [
       '@vuepress/register-components',
@@ -156,5 +154,14 @@ module.exports = {
         components: liveComponents
       }
     ]
-  ]
+  ],
+
+  /**
+   * Global sass variables
+   */
+  scss: {
+    additionalData: `
+        @import "${SCSS_PATH}/ds-library.scss";
+      `
+  }
 };
