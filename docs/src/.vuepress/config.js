@@ -3,7 +3,7 @@ const path = require('path');
 const glob = require('glob');
 
 const COMPONENTS_PATH = path.join(__dirname, '../../../src/lib-components');
-const ASSETS_PATH = path.join(__dirname, '../../../src/assets');
+const SCSS_PATH = '../../../../src/assets/scss';
 
 /** Load all elements components to generate the pages */
 const elements = glob
@@ -145,8 +145,8 @@ module.exports = {
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
     [
-      'live'
-      // { layout: path.resolve(__dirname, './components/VueLiveLayout.vue') }
+      'live',
+      { layout: path.resolve(__dirname, './components/VueLiveLayout.vue') }
     ],
     [
       '@vuepress/register-components',
@@ -161,10 +161,7 @@ module.exports = {
    */
   scss: {
     additionalData: `
-        @import "../../../../src/assets/scss/_config.scss";
-        @import "../../../../src/assets/scss/_tokens.scss";
-        @import "../../../../src/assets/scss/_functions.scss";
-        @import "../../../../src/assets/scss/_root.scss";
+        @import "${SCSS_PATH}/ds-library.scss";
       `
   }
 };
