@@ -1,4 +1,16 @@
-export { default as DsLibrarySample } from './patterns/DsLibrarySample';
+/**
+ * ELEMENTS
+ */
 export { default as Button } from './elements/Button';
+export { default as IconSprite, Icon } from './elements/Icon';
+
+/**
+ * PATTERNS
+ */
+export { default as DsLibrarySample } from './patterns/DsLibrarySample';
 export { default as MyPattern } from './patterns/MyPattern';
+
+/**
+ * TEMPLATES
+ */
 export { default as HelloWorld } from './templates/HelloWorld';
