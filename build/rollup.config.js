@@ -10,6 +10,7 @@ import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import minimist from 'minimist';
 import postcss from 'rollup-plugin-postcss';
+import image from '@rollup/plugin-image';
 
 // Get browserslist config and remove ie from es build targets
 const esbrowserslist = fs
@@ -29,6 +30,7 @@ const projectRoot = path.resolve(__dirname, '..');
 
 const baseConfig = {
   input: 'src/entry.js',
+  inlineDynamicImports: true,
   plugins: {
     preVue: [
       alias({
@@ -106,6 +108,9 @@ if (!argv.format || argv.format === 'es') {
     },
     plugins: [
       replace(baseConfig.plugins.replace),
+      image({
+        dom: true
+      }),
       ...baseConfig.plugins.preVue,
       vue(baseConfig.plugins.vue),
       ...baseConfig.plugins.postVue,
@@ -141,6 +146,9 @@ if (!argv.format || argv.format === 'cjs') {
     },
     plugins: [
       replace(baseConfig.plugins.replace),
+      image({
+        dom: true
+      }),
       ...baseConfig.plugins.preVue,
       vue({
         ...baseConfig.plugins.vue,
@@ -171,6 +179,9 @@ if (!argv.format || argv.format === 'iife') {
     },
     plugins: [
       replace(baseConfig.plugins.replace),
+      image({
+        dom: true
+      }),
       ...baseConfig.plugins.preVue,
       vue(baseConfig.plugins.vue),
       ...baseConfig.plugins.postVue,

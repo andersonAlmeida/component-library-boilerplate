@@ -1,7 +1,7 @@
 {
-  "name": "ds-library",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@andersonrosadealmeida/ds-library-poc",
+  "version": "1.0.5",
+  "description": "component library bolerplate",
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
@@ -20,7 +20,7 @@
     "dist/*",
     "src/**/*.vue",
     "types/*",
-    "src/assets/scss/*"
+    "src/assets/**/*"
   ],
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -28,6 +28,7 @@
     "@rollup/plugin-alias": "^3.1.1",
     "@rollup/plugin-babel": "^5.2.2",
     "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-image": "^2.1.1",
     "@rollup/plugin-node-resolve": "^11.0.1",
     "@rollup/plugin-replace": "^2.3.4",
     "@vue/cli-plugin-babel": "^4.5.10",
@@ -71,9 +72,12 @@
     ]
   },
   "sideEffects": [
-    "*.sass",
-    "*.scss",
-    "*.css",
-    "*.vue"
-  ]
+    "**/*.sass",
+    "**/*.scss",
+    "**/*.css",
+    "**/*.vue"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }

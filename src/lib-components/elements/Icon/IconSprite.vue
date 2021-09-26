@@ -1,31 +1,45 @@
 <template>
-  <svg width="0" height="0" style="display: none" v-html="$options.svgSprite" />
+  <svg width="0" height="0" style="display: none" v-html="sprite" />
 </template>
 
 <script>
-const svgContext = require.context(
-  '!svg-inline-loader?' +
-    'removeTags=true' + // remove title tags, etc.
-    '&removeSVGTagAttrs=true' + // enable removing attributes
-    '&removingTagAttrs=fill' + // remove fill attributes
-    `!@${process.env.ASSETS_URL}`, // search this directory
-  true, // search subdirectories
-  /\w+\.svg$/i // only include SVG files
-);
-
-const symbols = svgContext.keys().map((path) => {
-  // get SVG file content
-  const content = svgContext(path);
-  // extract icon id from filename
-  const id = path.replace(/^\.\/(.*)\.\w+$/, '$1');
-  // replace svg tags with symbol tags and id attribute
-  return content
-    .replace('<svg', `<symbol id="${id}"`)
-    .replace('svg>', 'symbol>');
-});
+import { svgIcons } from '@/assets/icons/svg/icons';
 
 export default {
   name: 'IconSprite',
-  svgSprite: symbols.join('\n') // concatenate all symbols into $options.svgSprite
+  data() {
+    return {
+      sprite: ''
+    };
+  },
+  created() {
+    let symbols = [];
+    symbols = svgIcons().map(async (path) => {
+      const id = path.substring(path.lastIndexOf('/') + 1).split('.')[0];
+
+      let svg = '';
+
+      await fetch(path)
+        .then((response) => response.text())
+        .then((response) => {
+          debugger;
+          svg = response
+            .replace(/\n/gim, '')
+            .replace(/(width|height)="\d+"/gim, '')
+            .replace(/(viewbox)="([\d+]\s?){1,4}"/gim, '')
+            .replace('<svg', `<symbol id="${id}"`)
+            .replace('svg>', 'symbol>');
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+
+      return svg;
+    });
+
+    Promise.all(symbols).then((response) => {
+      this.sprite = response.join('\n');
+    });
+  }
 };
 </script>

@@ -5,7 +5,9 @@ import Dev from './serve.vue';
 import DsLibrary from '@/entry.esm';
 import '@/assets/scss/ds-library.scss';
 
-Vue.use(DsLibrary);
+Vue.use(DsLibrary, {
+  customSvgIconPath: '@/assets/custom'
+});
 
 Vue.config.productionTip = false;
 

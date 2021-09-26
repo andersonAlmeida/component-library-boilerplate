@@ -2,7 +2,7 @@
  * ELEMENTS
  */
 export { default as Button } from './elements/Button';
-export { default as IconSprite, Icon } from './elements/Icon';
+export { IconSprite, Icon } from './elements/Icon';
 
 /**
  * PATTERNS

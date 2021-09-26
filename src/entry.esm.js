@@ -1,8 +1,18 @@
 // Import vue components
 import * as components from '@/lib-components/index';
 
+const defaultOptions = {
+  customSvgIconPath: null
+};
+
 // install function executed by Vue.use()
-const install = function installDsLibrary(Vue) {
+const install = function installDsLibrary(Vue, options) {
+  let userOptions = { ...defaultOptions, ...options };
+
+  if (userOptions.customSvgIconPath) {
+    Vue.prototype.$customSvgIconPath = userOptions.customSvgIconPath;
+  }
+
   Object.entries(components).forEach(([componentName, component]) => {
     Vue.component(componentName, component);
   });
