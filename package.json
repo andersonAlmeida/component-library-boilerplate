@@ -1,6 +1,6 @@
 {
   "name": "@andersonrosadealmeida/ds-library-poc",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "component library bolerplate",
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
