@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { svgIcons } from '@/assets/icons/svg/icons';
+import { svgIcons } from '../../../assets/icons/svg/icons';
 
 export default {
   name: 'IconSprite',
@@ -22,7 +22,6 @@ export default {
       await fetch(path)
         .then((response) => response.text())
         .then((response) => {
-          debugger;
           svg = response
             .replace(/\n/gim, '')
             .replace(/(width|height)="\d+"/gim, '')

@@ -20,5 +20,7 @@ export default Vue.extend({
     <HelloWorld />
     <Icon icon="spotify" />
     <Icon icon="facebook2" />
+    <Icon icon="linkedin" />
+    <Icon icon="whatsapp" />
   </div>
 </template>
